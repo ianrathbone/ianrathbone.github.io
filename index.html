@@ -27,23 +27,60 @@
     <!-- <link rel="stylesheet" href="css/themes/white-grey.css"> -->
     <!-- <link rel="stylesheet" href="css/themes/white-red.css"> -->
     <!-- <link rel="stylesheet" href="css/themes/yellow-black.css"> -->
+    
+    
 </head>
 <body>
-<main>
-    <div class="intro">Hello there!</div>
-    <div class="introspective">I am Ian Rathbone :)</div>
-    <div class="tagline">Family Man | Mountain Biker | .NET and Azure Developer | Beer Lover </div>
-    <!-- Find your icons from here - https://fontawesome.com/icons?d=gallery&s=brands -->
-    <div class="icons-social">
-        <a target="_blank" href="https://www.github.com/ianrathbone"><i class="fab fa-github"></i></a>
-        <a target="_blank" href="https://vsco.co/ianrathbone"><i class="fas fa-camera-retro"></i></a>
-        <a target="_blank" href="https://mastodon.technology/@ianrathbone"><i class="fab fa-mastodon"></i></a>
-        <a target="_blank" href="https://dev.to/ianrathbone"><i class="fab fa-dev"></i></a>
-        <a target="_blank" href="https://www.strava.com/athletes/11149769"><i class="fab fa-strava"></i></a>
-        <a target="_blank" href="https://www.twitter.com/ianrathbone"><i class="fab fa-twitter"></i></a>
-        <a target="_blank" href="https://www.instagram.com/ianrathbone"><i class="fab fa-instagram"></i></a>
-        <a target="_blank" href="https://www.untappd.com/user/ianrathbone"><i class="fas fa-beer"></i></a>
-    </div>
-</main>
+    <main>
+        <div class="intro">Hello there!</div>
+        <div class="introspective">I am Ian Rathbone :)</div>
+        <div class="tagline">Family Man | Mountain Biker | .NET and Azure Developer | Beer Lover </div>
+        <!-- Find your icons from here - https://fontawesome.com/icons?d=gallery&s=brands -->
+        <div class="icons-social">
+            <a target="_blank" href="https://www.github.com/ianrathbone"><i class="fab fa-github"></i></a>
+            <a target="_blank" href="https://vsco.co/ianrathbone"><i class="fas fa-camera-retro"></i></a>
+            <a target="_blank" href="https://mastodon.technology/@ianrathbone"><i class="fab fa-mastodon"></i></a>
+            <a target="_blank" href="https://dev.to/ianrathbone"><i class="fab fa-dev"></i></a>
+            <a target="_blank" href="https://www.strava.com/athletes/11149769"><i class="fab fa-strava"></i></a>
+            <a target="_blank" href="https://www.twitter.com/ianrathbone"><i class="fab fa-twitter"></i></a>
+            <a target="_blank" href="https://www.instagram.com/ianrathbone"><i class="fab fa-instagram"></i></a>
+            <a target="_blank" href="https://www.untappd.com/user/ianrathbone"><i class="fas fa-beer"></i></a>
+        </div>
+        <br />
+        <div class="introspective"><p id="demo"></p></div>
+        <div class="introspective"><a href="https://www.justgiving.com/crowdfunding/ian-rathbone">Please sponsor me here!</a></div>
+        
+    </main>
+
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Mar 29, 2019 13:00:00").getTime();
+
+// Update the count down every 1 second
+    var x = setInterval(function() {
+
+        // Get todays date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("demo").innerHTML = "In " + days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s " + " I'm abseiling 115ft for charity!";
+
+        // If the count down is finished, write some text 
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "I've just abseiled 115ft for charity!";
+        }
+    }, 1000);
+</script>
 </body>
 </html>
